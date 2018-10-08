@@ -4,6 +4,7 @@ Mobile app to track games you play in leagues, pick ups,..etc. (In Progress)
 TODOS:
 - add archetecture diagram
 - add testing lambda
+- Clean up lambda articfact
 
 # Development
  - Chekout repo
