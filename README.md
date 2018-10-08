@@ -1,7 +1,8 @@
 # Track-My-Games
 Mobile app to track games you play in leagues, pick ups,..etc. (In Progress)
 
-MORE NOTES WILL GO HERE
+TODOS:
+- add archetecture diagram
 
 # Development
  - Chekout repo
