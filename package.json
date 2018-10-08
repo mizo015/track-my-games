@@ -1,0 +1,33 @@
+{
+  "name": "track-my-games",
+  "version": "1.0.0",
+  "description": "Mobile app to track games you play in leagues, pick ups,..etc.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "^1.32.0",
+    "serverless-dynamodb-local": "^0.2.35",
+    "serverless-offline": "^3.27.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizo015/track-my-games.git"
+  },
+  "keywords": [
+    "track",
+    "my",
+    "games",
+    "sports",
+    "tracker",
+    "score"
+  ],
+  "author": "Hamza Bentebbaa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizo015/track-my-games/issues"
+  },
+  "homepage": "https://github.com/mizo015/track-my-games#readme"
+}
