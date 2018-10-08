@@ -10,7 +10,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   stage: dev
   region: us-east-1
   iamRoleStatements:
@@ -29,7 +29,7 @@ provider:
 
 functions:
   app:
-    handler: index.handler
+    handler: backend/index.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
@@ -52,8 +52,7 @@ resources:
           WriteCapacityUnits: 1
         TableName: ${self:custom.tableName}
 
-#package:
-  # exclude:
-  #   - src/**
-  # include:
-  #   - src/function/handler.js
+package:
+  exclude:
+    - '*/**'
+    - '!backend/**'
