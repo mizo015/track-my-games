@@ -5,8 +5,15 @@ service: track-my-games
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline #serverless-offline needs to be last in the list
+
 custom:
   tableName: 'users-table-${self:provider.stage}'
+  dynamodb:
+    start:
+      migrate: true
 
 provider:
   name: aws
