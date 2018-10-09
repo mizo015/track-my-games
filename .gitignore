@@ -3,3 +3,4 @@ node_modules/
 .dynamodb/
 .ssh/
 .expo/
+credentials.json
