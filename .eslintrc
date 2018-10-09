@@ -2,10 +2,11 @@
     "parser": "babel-eslint",
     "extends": [
         "airbnb",
-        "prettier",
-        "prettier/react-native"
+        "prettier"
     ],
     "rules": {
+        "react/sort-comp": [0, {}],
+        "no-underscore-dangle": [0, {}],
         "react/jsx-filename-extension": [
             1,
             {
@@ -25,6 +26,7 @@
         ]
     },
     "plugins": [
-        "prettier"
+        "prettier",
+        "react"
     ]
 }
