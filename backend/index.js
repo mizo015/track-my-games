@@ -65,14 +65,14 @@ app.post('/users', function (req, res) {
         Item: req.body,
     };
 
-    dynamoDb.put(params, (error, putRes) => {
+    dynamoDb.put(params, (error) => {
         if (error) {
             console.log(error);
             res
                 .status(400)
                 .json({error: 'Could not create user'});
         }
-        res.json(putRes);
+        res.json({userId, name});
     });
 })
 
