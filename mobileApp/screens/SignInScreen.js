@@ -39,6 +39,8 @@ export default class SignInScreen extends React.Component {
     if (result.accessToken) {
       await AsyncStorage.setItem('accessToken', result.accessToken);
       navigation.navigate('Main');
+
+      return;
     }
 
     this.setState({
