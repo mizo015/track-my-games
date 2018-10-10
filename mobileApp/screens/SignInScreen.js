@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet, AsyncStorage } from 'react-native';
+import { Button, View, StyleSheet } from 'react-native';
+
+import FailedLogin from '../components/FailedLogin';
 
 import { signInWithGoogleAsync } from '../helpers/Login';
+import { setItem } from '../storage/localStorage';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +28,7 @@ export default class SignInScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        {loginFailed && <Text>LOGIN GAILED!!!</Text>}
+        <FailedLogin failed={loginFailed} />
         <View>THIS IS SIGN IN SCREEN</View>
         <Button title="Sign in!" onPress={this._signInAsync} />
       </View>
@@ -37,7 +40,7 @@ export default class SignInScreen extends React.Component {
     const result = await signInWithGoogleAsync();
 
     if (result.accessToken) {
-      await AsyncStorage.setItem('accessToken', result.accessToken);
+      await setItem('accessToken', result.accessToken);
       navigation.navigate('Main');
 
       return;
