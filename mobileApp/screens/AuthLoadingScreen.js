@@ -1,5 +1,7 @@
 import React from 'react';
-import { ActivityIndicator, AsyncStorage, StatusBar, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, StatusBar, StyleSheet, View } from 'react-native';
+
+import { getItem } from '../storage/localStorage';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +21,7 @@ export default class AuthLoadingScreen extends React.Component {
   _bootstrapAsync = async () => {
     const { navigation } = this.props;
 
-    const accessToken = await AsyncStorage.getItem('accessToken');
+    const accessToken = await getItem('accessToken');
     navigation.navigate(accessToken ? 'Main' : 'Auth');
   };
 
