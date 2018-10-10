@@ -5,6 +5,7 @@
         "prettier"
     ],
     "rules": {
+        "import/prefer-default-export":[0, {}],
         "react/sort-comp": [0, {}],
         "no-underscore-dangle": [0, {}],
         "react/jsx-filename-extension": [
@@ -21,7 +22,8 @@
             {
                 "trailingComma": "es5",
                 "singleQuote": true,
-                "printWidth": 100
+                "printWidth": 100,
+                "tabWidth": 2
             }
         ]
     },
