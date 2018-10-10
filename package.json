@@ -2,7 +2,6 @@
   "name": "track-my-games",
   "version": "1.0.0",
   "description": "Mobile app to track games you play in leagues, pick ups,..etc.",
-  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.0.1",
