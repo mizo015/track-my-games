@@ -1,39 +1,13 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, Image, TouchableOpacity, Platform } from 'react-native';
 import { Icon } from 'expo';
 
 import { getItem } from '../storage/localStorage';
 import { signOut } from '../helpers/Auth';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    flex: 0,
-    flexDirection: 'row',
-    height: 100,
-    backgroundColor: 'rgb(250, 250, 250)',
-    padding: 20,
-  },
-  headerImageContainer: {
-    flex: 0,
-  },
-  headerImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-  },
-  headerCenter: {
-    flex: 2,
-    padding: 10,
-  },
-  headerRight: {
-    flex: 1,
-    padding: 10,
-    alignItems: 'flex-end',
-  },
-});
+import { BoldText, RegularText } from '../components/StyledText';
+
+import { styles } from '../styles/Settings';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
@@ -53,11 +27,11 @@ export default class SettingsScreen extends React.Component {
     const { loading, user } = this.state;
 
     if (loading) {
-      return <Text>loading...</Text>;
+      return <BoldText>loading...</BoldText>;
     }
 
     if (!user) {
-      return <Text>Failed to load user info...</Text>;
+      return <BoldText>Failed to load user info...</BoldText>;
     }
 
     return (
@@ -67,15 +41,15 @@ export default class SettingsScreen extends React.Component {
             <Image source={{ uri: user.photoUrl }} style={styles.headerImage} />
           </View>
           <View style={styles.headerCenter}>
-            <Text>{user.name}</Text>
-            <Text>{user.email}</Text>
+            <BoldText>{user.name}</BoldText>
+            <RegularText>{user.email}</RegularText>
           </View>
           <View style={styles.headerRight}>
             <TouchableOpacity onPress={this._handleSignOut}>
               <Icon.Ionicons
                 name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-logout'}
                 size={26}
-                style={{ marginBottom: -3 }}
+                style={{ marginBottom: -3, fontFamily: 'roboto-bold' }}
               />
             </TouchableOpacity>
           </View>
