@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, Button } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { Icon } from 'expo';
 
 import { getItem } from '../storage/localStorage';
 import { signOut } from '../helpers/Auth';
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row',
     height: 100,
-    backgroundColor: 'rgb(98, 228, 56)',
+    backgroundColor: 'rgb(250, 250, 250)',
     padding: 20,
   },
   headerImageContainer: {
@@ -70,7 +71,13 @@ export default class SettingsScreen extends React.Component {
             <Text>{user.email}</Text>
           </View>
           <View style={styles.headerRight}>
-            <Button type="button" title="logout" onPress={this._handleSignOut} />
+            <TouchableOpacity onPress={this._handleSignOut}>
+              <Icon.Ionicons
+                name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-logout'}
+                size={26}
+                style={{ marginBottom: -3 }}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
