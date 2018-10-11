@@ -1,7 +1,16 @@
+/* eslint-disable global-require */
+
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});
 
 export default class App extends React.Component {
   state = {
@@ -17,21 +26,21 @@ export default class App extends React.Component {
           onFinish={this._handleFinishLoading}
         />
       );
-    } else {
-      return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
-      );
     }
+
+    return (
+      <View style={styles.container}>
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        <AppNavigator />
+      </View>
+    );
   }
 
-  _loadResourcesAsync = async () => {
-    return Promise.all([
+  _loadResourcesAsync = async () =>
+    Promise.all([
       Asset.loadAsync([
-        require('./assets/images/robot-dev.png'),
-        require('./assets/images/robot-prod.png'),
+        // Load async assets
+        // i.e: require('./assets/images/robot-dev.png'),
       ]),
       Font.loadAsync({
         ...Icon.Ionicons.font,
@@ -39,7 +48,6 @@ export default class App extends React.Component {
         'roboto-bold': require('./assets/fonts/Roboto-Bold.ttf'),
       }),
     ]);
-  };
 
   _handleLoadingError = error => {
     // In this case, you might want to report the error to your error
@@ -51,10 +59,3 @@ export default class App extends React.Component {
     this.setState({ isLoadingComplete: true });
   };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
