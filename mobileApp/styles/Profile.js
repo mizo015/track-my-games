@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { defaultBorderColor, defaultBorderWidth, defaultBackgroundColor } from './Constants';
 
 export const styles = StyleSheet.create({

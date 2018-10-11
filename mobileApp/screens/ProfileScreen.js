@@ -7,9 +7,9 @@ import { signOut } from '../helpers/Auth';
 
 import { BoldText, RegularText } from '../components/StyledText';
 
-import { styles } from '../styles/Settings';
+import { styles } from '../styles/Profile';
 
-export default class SettingsScreen extends React.Component {
+export default class ProfileScreen extends React.Component {
   static navigationOptions = {
     title: 'Profile',
   };
