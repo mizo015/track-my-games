@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class HomeScreen extends React.Component {
+export default class GamesScreen extends React.Component {
   static navigationOptions = {
-    title: 'HomeScreen',
+    title: 'Games',
   };
 
   render() {
@@ -22,16 +22,6 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           {__DEV__ && <DevTriggers />}
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
         </ScrollView>
       </View>
     );
