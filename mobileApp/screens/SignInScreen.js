@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, View, StyleSheet } from 'react-native';
 
-import FailedLogin from '../components/FailedLogin';
+import { FailedLogin } from '../components/FailedLogin';
 
-import { signInWithGoogleAsync } from '../helpers/Login';
+import { signInWithGoogleAsync } from '../helpers/Auth';
 import { setItem } from '../storage/localStorage';
 
 const styles = StyleSheet.create({
@@ -40,9 +40,7 @@ export default class SignInScreen extends React.Component {
     const result = await signInWithGoogleAsync();
 
     if (result.accessToken) {
-      await setItem('accessToken', result.accessToken);
       navigation.navigate('Main');
-
       return;
     }
 

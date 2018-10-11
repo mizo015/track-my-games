@@ -1,5 +1,6 @@
 import Expo from 'expo';
 import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from '../credentials.json';
+import { setItem } from '../storage/localStorage';
 
 export const signInWithGoogleAsync = async () => {
   try {
@@ -10,6 +11,10 @@ export const signInWithGoogleAsync = async () => {
     });
 
     if (result.type === 'success') {
+      // store user info locally
+      await setItem('accessToken', result.accessToken);
+      await setItem('user', result.user);
+
       return result;
     }
     return {
@@ -22,4 +27,7 @@ export const signInWithGoogleAsync = async () => {
   }
 };
 
-// export { signInWithGoogleAsync };
+export const signOut = async () => {
+  await setItem('accessToken', null);
+  await setItem('user', null);
+};

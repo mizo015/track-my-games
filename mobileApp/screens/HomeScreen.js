@@ -13,6 +13,7 @@ import {
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import DevTriggers from '../components/DevTriggers';
 
 const styles = StyleSheet.create({
   container: {
@@ -114,6 +115,7 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+          {__DEV__ && <DevTriggers />}
           <View style={styles.welcomeContainer}>
             <Image
               source={
