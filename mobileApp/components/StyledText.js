@@ -1,8 +1,11 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export class MonoText extends React.Component {
-  render() {
-    return <Text {...this.props} style={[this.props.style, { fontFamily: 'space-mono' }]} />;
-  }
-}
+/* eslint-disable react/destructuring-assignment */
+export const RegularText = props => (
+  <Text {...props} style={[props.style, { fontFamily: 'roboto-reg' }]} />
+);
+
+export const BoldText = props => (
+  <Text {...props} style={[props.style, { fontFamily: 'roboto-bold' }]} />
+);
