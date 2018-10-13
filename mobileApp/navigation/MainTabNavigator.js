@@ -2,13 +2,17 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarIcon';
+import { TabBarIcon } from '../components/Icons';
 import GamesScreen from '../screens/GamesScreen';
 import LinksScreen from '../screens/LinksScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import GameDetailsScreen from '../screens/GameDetailsScreen';
+
+import { footerStyles } from '../styles/App';
 
 const GamesStack = createStackNavigator({
   Home: GamesScreen,
+  GameDetails: GameDetailsScreen,
 });
 
 GamesStack.navigationOptions = {
@@ -54,8 +58,15 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-export default createBottomTabNavigator({
-  GamesStack,
-  LinksStack,
-  SettingsStack,
-});
+export default createBottomTabNavigator(
+  {
+    GamesStack,
+    LinksStack,
+    SettingsStack,
+  },
+  {
+    tabBarOptions: {
+      ...footerStyles,
+    },
+  }
+);

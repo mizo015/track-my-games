@@ -1,16 +1,10 @@
 /* eslint-disable global-require */
 
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
+import { styles } from './styles/App';
 
 export default class App extends React.Component {
   state = {
@@ -44,8 +38,10 @@ export default class App extends React.Component {
       ]),
       Font.loadAsync({
         ...Icon.Ionicons.font,
-        'roboto-reg': require('./assets/fonts/Roboto-Regular.ttf'),
-        'roboto-bold': require('./assets/fonts/Roboto-Bold.ttf'),
+        ...Icon.Entypo.font,
+        ...Icon.FontAwesome.font,
+        'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+        'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
       }),
     ]);
 

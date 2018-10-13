@@ -1,28 +1,34 @@
-/* global __DEV__ */
-
 import React from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import DevTriggers from '../components/DevTriggers';
+import { styles } from '../styles/Games';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
+import GamesList from '../components/GamesList';
+import Header from '../components/Header';
 
 export default class GamesScreen extends React.Component {
   static navigationOptions = {
-    title: 'Games',
+    header: <Header title="Games" />,
   };
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          {__DEV__ && <DevTriggers />}
-        </ScrollView>
+        <GamesList
+          data={[
+            {key: 'Devin'},
+            {key: 'Jackson'},
+            {key: 'James'},
+            {key: 'Joel'},
+            {key: 'John'},
+            {key: 'Jillian'},
+            {key: 'Jimmy'},
+            {key: 'Julie'},
+          ]}
+          navigation={navigation}
+        />
       </View>
     );
   }

@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-
 import {
   defaultBorderColor,
   defaultBorderWidth,
@@ -12,30 +11,21 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: secondaryBackgroundColor,
   },
-  header: {
-    flex: 0,
-    flexDirection: 'row',
-    height: 100,
-    backgroundColor: defaultBackgroundColor,
-    padding: 20,
-    borderColor: defaultBorderColor,
-    borderTopWidth: defaultBorderWidth,
-  },
-  headerImageContainer: {
-    flex: 0,
-  },
-  headerImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-  },
-  headerCenter: {
-    flex: 2,
-    padding: 10,
-  },
-  headerRight: {
+});
+
+export const gameItem = StyleSheet.create({
+  container: {
     flex: 1,
+    flexDirection: 'row',
+    backgroundColor: defaultBackgroundColor,
+    borderBottomColor: defaultBorderColor,
+    borderBottomWidth: defaultBorderWidth,
     padding: 10,
-    alignItems: 'flex-end',
+  },
+  stats: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 5,
+    flexWrap: 'wrap',
   },
 });

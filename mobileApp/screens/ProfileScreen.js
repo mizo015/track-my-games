@@ -35,7 +35,7 @@ export default class ProfileScreen extends React.Component {
     }
 
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerImageContainer}>
             <Image source={{ uri: user.photoUrl }} style={styles.headerImage} />
@@ -49,7 +49,7 @@ export default class ProfileScreen extends React.Component {
               <Icon.Ionicons
                 name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-logout'}
                 size={26}
-                style={{ marginBottom: -3, fontFamily: 'roboto-bold' }}
+                style={{ marginBottom: -3, fontFamily: 'Roboto-Bold' }}
               />
             </TouchableOpacity>
           </View>
