@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 
 export default class StatsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'Stats',
   };
 
   render() {
