@@ -1,37 +1,39 @@
 import React from 'react';
-import { FlatList, View, Text, TouchableOpacity } from 'react-native';
+import { FlatList, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { gameItem } from '../styles/Games';
-import { BoldText } from './StyledText';
-import { PlatformIcon, IconEntypo, IconFA } from './Icons';
+import { BoldText, MutedSmallText, RegularText } from './StyledText';
+import { IconEntypo, IconFA } from './Icons';
 
 const GameItem = ({ item, _handlePress }) => {
   return (
     <TouchableOpacity onPress={_handlePress}>
       <View style={gameItem.container}>
         <View style={{ flex: 1, alignItems: 'center' }}>
-          <IconFA name="soccer-ball-o" style={{ marginBottom: 10 }} size={40} color="red" />
-          <Text style={{ borderWidth: 1, borderColor: 'grey', padding: 3 }}>1 - 2</Text>
+          <IconFA name="soccer-ball-o" size={40} color="red" />
+          <RegularText style={{ borderWidth: 1, borderColor: 'grey', padding: 1 }}>
+            {'1 - 2'}
+          </RegularText>
         </View>
         <View style={{ flex: 3 }}>
-          <Text>
-            <BoldText style={{ marginRight: 5 }}>{item.key}</BoldText>
-            - 50 mins
-          </Text>
-          <Text>Shelburn Farm</Text>
+          <BoldText>
+            {item.key}
+            {' - 50 mins'}
+          </BoldText>
+          <RegularText>Shelburn Farm</RegularText>
           <View style={gameItem.stats}>
-            <Text>Goals: 1</Text>
-            <Text>Assists: 2</Text>
-            <Text>Lost: 5</Text>
-            <Text>On Target: 5</Text>
-            <Text>Off Target: 5</Text>
+            <RegularText>Goals: 1</RegularText>
+            <RegularText>Assists: 2</RegularText>
+            <RegularText>Lost: 5</RegularText>
+            <RegularText>On Target: 5</RegularText>
+            <RegularText>Off Target: 5</RegularText>
           </View>
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
-          <Text>01/01/2019</Text>
-          <Text style={{ marginBottom: 8 }}>at 7pm</Text>
-          <IconEntypo active name="emoji-happy" size={30} />
+          <MutedSmallText>01/01/2019</MutedSmallText>
+          <MutedSmallText style={{ marginBottom: 8 }}>at 7pm</MutedSmallText>
+          <IconEntypo name="emoji-happy" size={30} />
         </View>
       </View>
     </TouchableOpacity>

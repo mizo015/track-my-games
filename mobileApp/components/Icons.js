@@ -9,23 +9,48 @@ const Icon = props => <ExpoIcon.Ionicons {...props} />;
 const IconEntypo = props => <ExpoIcon.Entypo {...props} />;
 const IconFA = props => <ExpoIcon.FontAwesome {...props} />;
 
-Icon.defaultProps = {
+const defaultProps = {
   size: 20,
+  color: iconColor,
 };
 
-Icon.propTypes = {
+const propTypes = {
   name: PropTypes.string.isRequired,
   size: PropTypes.number,
+  color: PropTypes.string,
 };
 
-const TabBarIcon = props => (
-  <Icon
-    {...props}
-    /* eslint-disable react/destructuring-assignment */
-    color={props.focused ? activeIconColor : iconColor}
-    style={{ marginBottom: -3 }}
-  />
-);
+Icon.propTypes = propTypes;
+Icon.defaultProps = defaultProps;
+IconEntypo.propTypes = propTypes;
+IconEntypo.defaultProps = defaultProps;
+IconFA.propTypes = propTypes;
+IconFA.defaultProps = defaultProps;
+
+const TabBarIcon = props => {
+  switch (props.type) {
+    case 'FontAwesome':
+      return (
+        <IconFA
+          {...props}
+          /* eslint-disable react/destructuring-assignment */
+          color={props.focused ? activeIconColor : iconColor}
+          style={{ marginBottom: -3 }}
+          size={25}
+        />
+      );
+    default:
+      return (
+        <IconEntypo
+          {...props}
+          /* eslint-disable react/destructuring-assignment */
+          color={props.focused ? activeIconColor : iconColor}
+          style={{ marginBottom: -3 }}
+          size={25}
+        />
+      );
+  };
+};
 
 TabBarIcon.propTypes = {
   name: PropTypes.string.isRequired,

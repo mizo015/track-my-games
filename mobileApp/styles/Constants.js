@@ -8,5 +8,5 @@ export const primaryColor = '#37A000';
 export const secondaryColor = '#A4DD83';
 
 export const tabHeaderColor = '#F2F2F2';
-export const iconColor = '#9B9B9B';
+export const iconColor = primaryFontColor;
 export const activeIconColor = '#37A000';

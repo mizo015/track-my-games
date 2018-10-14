@@ -17,16 +17,7 @@ const GamesStack = createStackNavigator({
 
 GamesStack.navigationOptions = {
   tabBarLabel: 'Games',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="list" />,
 };
 
 const LinksStack = createStackNavigator({
@@ -36,7 +27,7 @@ const LinksStack = createStackNavigator({
 LinksStack.navigationOptions = {
   tabBarLabel: 'Links',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon type="FontAwesome" focused={focused} name="line-chart" />
   ),
 };
 
@@ -46,16 +37,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Profile',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="list" />,
 };
 
 export default createBottomTabNavigator(
