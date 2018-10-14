@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class LinksScreen extends React.Component {
+export default class StatsScreen extends React.Component {
   static navigationOptions = {
     title: 'Links',
   };

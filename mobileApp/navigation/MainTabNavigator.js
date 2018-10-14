@@ -1,10 +1,9 @@
 import React from 'react';
-import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import { TabBarIcon } from '../components/Icons';
 import GamesScreen from '../screens/GamesScreen';
-import LinksScreen from '../screens/LinksScreen';
+import StatsScreen from '../screens/StatsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import GameDetailsScreen from '../screens/GameDetailsScreen';
 
@@ -20,12 +19,12 @@ GamesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="list" />,
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const StatsStack = createStackNavigator({
+  Links: StatsScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+StatsStack.navigationOptions = {
+  tabBarLabel: 'Stats',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon type="FontAwesome" focused={focused} name="line-chart" />
   ),
@@ -43,7 +42,7 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator(
   {
     GamesStack,
-    LinksStack,
+    StatsStack,
     SettingsStack,
   },
   {
