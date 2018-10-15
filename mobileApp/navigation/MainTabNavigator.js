@@ -36,7 +36,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Profile',
-  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="list" />,
+  tabBarIcon: ({ focused }) => <TabBarIcon type="MCI" focused={focused} name="account" />,
 };
 
 export default createBottomTabNavigator(
