@@ -18,14 +18,14 @@ export default class GamesScreen extends React.Component {
       <View style={styles.container}>
         <GamesList
           data={[
-            {key: 'Devin'},
-            {key: 'Jackson'},
-            {key: 'James'},
-            {key: 'Joel'},
-            {key: 'John'},
-            {key: 'Jillian'},
-            {key: 'Jimmy'},
-            {key: 'Julie'},
+            {key: 'Rayan'},
+            {key: 'Wassim'},
+            {key: 'Deena'},
+            {key: 'Jana'},
+            {key: 'Imane'},
+            {key: 'Sana'},
+            {key: 'Miz'},
+            {key: 'Biz'},
           ]}
           navigation={navigation}
         />

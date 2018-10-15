@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 
 import { gameItem } from '../styles/Games';
 import { BoldText, MutedSmallText, RegularText } from './StyledText';
-import { IconEntypo, IconFA } from './Icons';
+import { IconFA } from './Icons';
 
 const GameItem = ({ item, _handlePress }) => {
   return (
     <TouchableOpacity onPress={_handlePress}>
       <View style={gameItem.container}>
         <View style={{ flex: 1, alignItems: 'center' }}>
-          <IconFA name="soccer-ball-o" size={40} color="red" />
-          <RegularText style={{ borderWidth: 1, borderColor: 'grey', padding: 1 }}>
+          <IconFA name="trophy" size={40} color="#F44336" />
+          <RegularText style={{ padding: 1, color: '#009688' }}>
             {'1 - 2'}
           </RegularText>
         </View>
@@ -31,9 +31,13 @@ const GameItem = ({ item, _handlePress }) => {
           </View>
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
-          <MutedSmallText>01/01/2019</MutedSmallText>
+          <MutedSmallText>01/01/2018</MutedSmallText>
           <MutedSmallText style={{ marginBottom: 8 }}>at 7pm</MutedSmallText>
-          <IconEntypo name="emoji-happy" size={30} />
+          <View style={{ flex: 2, alignItems: 'center', flexDirection: 'row', alignContent: 'space-around' }}>
+            <IconFA name="soccer-ball-o" size={20} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={20} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={20} color="#FFD600" style={{ marginRight: 4 }} />
+          </View>
         </View>
       </View>
     </TouchableOpacity>

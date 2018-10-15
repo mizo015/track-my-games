@@ -6,7 +6,7 @@ import { primaryFontColor } from '../styles/Constants';
 export const RegularText = props => (
   <Text
     {...props}
-    style={[props.style, { color: primaryFontColor, fontFamily: 'Roboto-Regular' }]}
+    style={[{ color: primaryFontColor, fontFamily: 'Roboto-Regular' }, props.style]}
   />
 );
 
