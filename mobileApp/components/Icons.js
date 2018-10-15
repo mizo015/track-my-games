@@ -29,37 +29,22 @@ IconFA.propTypes = propTypes;
 IconFA.defaultProps = defaultProps;
 
 const TabBarIcon = props => {
+  /* eslint-disable react/destructuring-assignment */
+  const newProps = {
+    ...props,
+    /* eslint-disable react/destructuring-assignment */
+    color: props.focused ? activeIconColor : iconColor,
+    style: { marginBottom: -3 },
+    size: 25,
+  };
+
   switch (props.type) {
     case 'MCI':
-      return (
-        <IconMCI
-          {...props}
-          /* eslint-disable react/destructuring-assignment */
-          color={props.focused ? activeIconColor : iconColor}
-          style={{ marginBottom: -3 }}
-          size={25}
-        />
-      );
+      return <IconMCI {...newProps} />;
     case 'FontAwesome':
-      return (
-        <IconFA
-          {...props}
-          /* eslint-disable react/destructuring-assignment */
-          color={props.focused ? activeIconColor : iconColor}
-          style={{ marginBottom: -3 }}
-          size={25}
-        />
-      );
+      return <IconFA {...newProps} />;
     default:
-      return (
-        <IconEntypo
-          {...props}
-          /* eslint-disable react/destructuring-assignment */
-          color={props.focused ? activeIconColor : iconColor}
-          style={{ marginBottom: -3 }}
-          size={25}
-        />
-      );
+      return <IconEntypo {...newProps} />;
   }
 };
 
