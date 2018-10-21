@@ -1,7 +1,6 @@
 import React from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { Text } from 'react-native';
 import PropTypes from 'prop-types';
-
 
 export default class GameDetailsScreen extends React.Component {
   static navigationOptions = {
@@ -9,8 +8,6 @@ export default class GameDetailsScreen extends React.Component {
   };
 
   render() {
-    return (
-      <Text>Details Screen</Text>
-    );
+    return <Text>Details Screen</Text>;
   }
 }
