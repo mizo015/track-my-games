@@ -25,7 +25,23 @@ export const gameItem = StyleSheet.create({
   stats: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 5,
     flexWrap: 'wrap',
+  },
+  left: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  right: {
+    flex: 2,
+    alignItems: 'center',
+    flexDirection: 'row',
+    alignContent: 'space-around',
+    flexWrap: 'wrap',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 8,
+  },
+  center: {
+    flex: 3,
   },
 });

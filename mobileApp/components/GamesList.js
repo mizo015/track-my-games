@@ -10,13 +10,13 @@ const GameItem = ({ item, _handlePress }) => {
   return (
     <TouchableOpacity onPress={_handlePress}>
       <View style={gameItem.container}>
-        <View style={{ flex: 1, alignItems: 'center' }}>
+        <View style={gameItem.left}>
           <IconFA name="trophy" size={40} color="#F44336" />
           <RegularText style={{ padding: 1, color: '#009688' }}>
             {'1 - 2'}
           </RegularText>
         </View>
-        <View style={{ flex: 3 }}>
+        <View style={gameItem.center}>
           <BoldText>
             {item.key}
             {' - 50 mins'}
@@ -31,13 +31,18 @@ const GameItem = ({ item, _handlePress }) => {
           </View>
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
-          <MutedSmallText>01/01/2018</MutedSmallText>
-          <MutedSmallText style={{ marginBottom: 8 }}>at 7pm</MutedSmallText>
-          <View style={{ flex: 2, alignItems: 'center', flexDirection: 'row', alignContent: 'space-around' }}>
-            <IconFA name="soccer-ball-o" size={20} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={20} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={20} color="#FFD600" style={{ marginRight: 4 }} />
+          <View style={gameItem.right}>
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
+            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
           </View>
+          <MutedSmallText>01/01/2018</MutedSmallText>
+          <MutedSmallText>at 7pm</MutedSmallText>
         </View>
       </View>
     </TouchableOpacity>

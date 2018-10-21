@@ -6,12 +6,14 @@ import GamesScreen from '../screens/GamesScreen';
 import StatsScreen from '../screens/StatsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import GameDetailsScreen from '../screens/GameDetailsScreen';
+import NewGameScreen from '../screens/NewGameScreen';
 
 import { footerStyles } from '../styles/App';
 
 const GamesStack = createStackNavigator({
   Home: GamesScreen,
   GameDetails: GameDetailsScreen,
+  NewGame: NewGameScreen,
 });
 
 GamesStack.navigationOptions = {
