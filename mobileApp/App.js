@@ -43,6 +43,9 @@ export default class App extends React.Component {
         ...Icon.MaterialCommunityIcons.font,
         'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
         'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
+        'Roboto-LightItalic': require('./assets/fonts/Roboto-LightItalic.ttf'),
+        'Roboto-Thin': require('./assets/fonts/Roboto-Thin.ttf'),
+        'Roboto-ThinItalic': require('./assets/fonts/Roboto-ThinItalic.ttf'),
       }),
     ]);
 
