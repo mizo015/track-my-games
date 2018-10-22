@@ -40,7 +40,7 @@ export const gameItem = StyleSheet.create({
     flexWrap: 'wrap',
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 8,
+    paddingBottom: 0,
   },
   center: {
     flex: 3,

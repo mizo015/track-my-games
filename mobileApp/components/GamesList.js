@@ -5,25 +5,10 @@ import PropTypes from 'prop-types';
 import { gameItem } from '../styles/Games';
 import { BoldText, MutedSmallText, RegularText } from './StyledText';
 import { IconFA, IconEntypo } from './Icons';
-/*
-{
-  "dateTime": "07/07/2018 02:02:00",
-  "lostBall": "3",
-  "snaps": ["some_pic_url"],
-  "notes": "blah blah",
-  "offTargetShots": "1",
-  "assists": "1",
-  "onTargetShots": "2",
-  "defendedBalls": "4",
-  "gameTimeMins": "50",
-  "id": "111",
-  "goalsScored": "1",
-  "fun": "1"
-},
-*/
+import GameRating from './GameRating';
 
 const GameItem = ({ item, _handlePress }) => {
-  const trophyColor = item.isWon ? '#009688' : 'red';
+  const trophyColor = item.isWon ? '#4CAF50' : '#F44336';
 
   return (
     <TouchableOpacity onPress={_handlePress}>
@@ -50,16 +35,7 @@ const GameItem = ({ item, _handlePress }) => {
           </View>
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
-          <View style={gameItem.right}>
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-            <IconFA name="soccer-ball-o" size={15} color="#FFD600" style={{ marginRight: 4 }} />
-          </View>
+          <GameRating funRate={item.fun} />
           <MutedSmallText>01/01/2018</MutedSmallText>
           <MutedSmallText>at 7pm</MutedSmallText>
         </View>
