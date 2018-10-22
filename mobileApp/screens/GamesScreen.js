@@ -30,7 +30,7 @@ export default class GamesScreen extends React.Component {
       });
     } else {
       this.setState({
-        userError: usrRes.error,
+        userError: usrRes.message,
         loading: false,
       });
     }
@@ -44,10 +44,10 @@ export default class GamesScreen extends React.Component {
       <View style={styles.container}>
         {userError && <Error message={userError} />}
         {loading && <Text>...Loading</Text>}
-        {/* !loading && <Text>{JSON.stringify(user)}</Text> */}
-        {!loading && (
-          <GamesList data={user.games.map(u => ({ ...u, key: u.id }))} navigation={navigation} />
-        )}
+        {!loading &&
+          user && (
+            <GamesList data={user.games.map(u => ({ ...u, key: u.id }))} navigation={navigation} />
+          )}
       </View>
     );
   }

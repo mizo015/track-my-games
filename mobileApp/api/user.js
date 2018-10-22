@@ -13,4 +13,5 @@ export const getUser = async userId =>
     .catch(err => ({
       success: false,
       error: err,
+      message: 'Unable to get user info',
     }));

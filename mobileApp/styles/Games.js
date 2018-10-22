@@ -50,7 +50,7 @@ export const gameItem = StyleSheet.create({
     color: '#009688',
   },
   location: {
-    fontFamily: 'Roboto-ThinItalic',
+    fontFamily: 'Roboto-LightItalic',
     fontSize: 12,
   },
 });
