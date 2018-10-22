@@ -4,30 +4,49 @@ import PropTypes from 'prop-types';
 
 import { gameItem } from '../styles/Games';
 import { BoldText, MutedSmallText, RegularText } from './StyledText';
-import { IconFA } from './Icons';
+import { IconFA, IconEntypo } from './Icons';
+/*
+{
+  "dateTime": "07/07/2018 02:02:00",
+  "lostBall": "3",
+  "snaps": ["some_pic_url"],
+  "notes": "blah blah",
+  "offTargetShots": "1",
+  "assists": "1",
+  "onTargetShots": "2",
+  "defendedBalls": "4",
+  "gameTimeMins": "50",
+  "id": "111",
+  "goalsScored": "1",
+  "fun": "1"
+},
+*/
 
 const GameItem = ({ item, _handlePress }) => {
+  const trophyColor = item.isWon ? '#009688' : 'red';
+
   return (
     <TouchableOpacity onPress={_handlePress}>
       <View style={gameItem.container}>
         <View style={gameItem.left}>
-          <IconFA name="trophy" size={40} color="#F44336" />
-          <RegularText style={{ padding: 1, color: '#009688' }}>
-            {'1 - 2'}
-          </RegularText>
+          <IconFA name="trophy" size={40} color={trophyColor} />
+          <RegularText style={gameItem.score}>{item.score}</RegularText>
         </View>
         <View style={gameItem.center}>
           <BoldText>
-            {item.key}
-            {' - 50 mins'}
+            {item.name}
+            {` - ${item.gameTimeMins} mins`}
           </BoldText>
-          <RegularText>Shelburn Farm</RegularText>
+          <RegularText style={gameItem.location}>
+            <IconEntypo name="location-pin" size={12} />
+            {item.location}
+          </RegularText>
           <View style={gameItem.stats}>
-            <RegularText>Goals: 1</RegularText>
-            <RegularText>Assists: 2</RegularText>
-            <RegularText>Lost: 5</RegularText>
-            <RegularText>On Target: 5</RegularText>
-            <RegularText>Off Target: 5</RegularText>
+            <RegularText>{`Goals: ${item.goalsScored}`}</RegularText>
+            <RegularText>{`Assists: ${item.assists}`}</RegularText>
+            <RegularText>{`Lost: ${item.lostBall}`}</RegularText>
+            <RegularText>{`On Target: ${item.onTargetShots}`}</RegularText>
+            <RegularText>{`Off Target: ${item.offTargetShots}`}</RegularText>
           </View>
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
@@ -50,15 +69,14 @@ const GameItem = ({ item, _handlePress }) => {
 };
 
 class GamesList extends React.Component {
-  state = {
-
-  }
-
   render() {
     const { data } = this.props;
 
     return (
-      <FlatList data={data} renderItem={({item}) => <GameItem item={item} _handlePress={this._handlePress}/>} />
+      <FlatList
+        data={data}
+        renderItem={({ item }) => <GameItem item={item} _handlePress={this._handlePress} />}
+      />
     );
   }
 

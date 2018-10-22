@@ -26,6 +26,7 @@ export const gameItem = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
+    paddingTop: 6,
   },
   left: {
     flex: 1,
@@ -43,5 +44,13 @@ export const gameItem = StyleSheet.create({
   },
   center: {
     flex: 3,
+  },
+  score: {
+    padding: 1,
+    color: '#009688',
+  },
+  location: {
+    fontFamily: 'Roboto-ThinItalic',
+    fontSize: 12,
   },
 });
