@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import { gameItem } from '../styles/Games';
 import { BoldText, MutedSmallText, RegularText } from './StyledText';
@@ -9,6 +10,7 @@ import GameRating from './GameRating';
 
 const GameItem = ({ item, _handlePress }) => {
   const trophyColor = item.isWon ? '#4CAF50' : '#F44336';
+  const date = moment.unix(item.dateTime);
 
   return (
     <TouchableOpacity onPress={_handlePress}>
@@ -36,8 +38,8 @@ const GameItem = ({ item, _handlePress }) => {
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
           <GameRating funRate={item.fun} />
-          <MutedSmallText>01/01/2018</MutedSmallText>
-          <MutedSmallText>at 7pm</MutedSmallText>
+          <MutedSmallText>{`${date.format('MM/DD/YYYY')}`}</MutedSmallText>
+          <MutedSmallText>{`at ${date.format('Ha')}`}</MutedSmallText>
         </View>
       </View>
     </TouchableOpacity>
