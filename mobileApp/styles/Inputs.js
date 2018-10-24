@@ -1,15 +1,11 @@
 import { StyleSheet } from 'react-native';
-import {
-  defaultBorderColor,
-  defaultBorderWidth,
-  defaultBackgroundColor,
-  secondaryBackgroundColor,
-} from './Constants';
+import { defaultBorderColor, defaultBorderWidth, defaultBackgroundColor } from './Constants';
 
 const fontFamily = 'Roboto-Regular';
+const inputHeight = 40;
 
 const input = {
-  height: 40,
+  height: inputHeight,
   backgroundColor: defaultBackgroundColor,
   margin: 10,
   paddingLeft: 5,
@@ -31,13 +27,17 @@ export const styles = StyleSheet.create({
   },
   picker: {
     flex: 1,
+    margin: 5,
   },
   pickerText: {
     flex: 1,
+    paddingTop: 15,
   },
   pickerItem: {
-    height: 40,
-    padding: 0,
-    margin: 0,
+    width: 80,
+    height: inputHeight,
+    borderStyle: 'dotted',
+    borderColor: defaultBorderColor,
+    borderWidth: defaultBorderWidth,
   },
 });
