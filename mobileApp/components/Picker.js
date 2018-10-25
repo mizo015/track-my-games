@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Picker as NativePicker } from 'react-native';
 
-import { RegularText } from './StyledText';
+import { BoldText } from './StyledText';
 import { styles } from '../styles/Inputs';
 
-const Picker = ({ selectedValue, options, label, _changeHandler }) => (
-  <View style={styles.pickerContainer}>
-    <RegularText style={styles.pickerText}>{label}</RegularText>
+const Picker = ({ selectedValue, options, label, _changeHandler, containerStyles }) => (
+  <View style={containerStyles}>
+    <BoldText style={styles.pickerText}>{label}</BoldText>
     <NativePicker
       selectedValue={selectedValue}
       style={styles.picker}
