@@ -65,4 +65,31 @@ app.post('/users', (req, res) => {
   });
 });
 
+// Add games
+app.post('/addGames', (req, res) => {
+  const { userId, games } = req.body;
+
+  const params = {
+    TableName: USERS_TABLE,
+    Key: {
+      userId,
+    },
+    UpdateExpression: 'SET games = list_append(games, :games)',
+    ExpressionAttributeValues: {
+      ':games': games,
+    },
+    ReturnValues: 'UPDATED_NEW', // optional (NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW)
+    ReturnConsumedCapacity: 'NONE', // optional (NONE | TOTAL | INDEXES)
+    ReturnItemCollectionMetrics: 'NONE', // optional (NONE | SIZE)
+  };
+
+  dynamoDb.update(params, (error, data) => {
+    if (error) {
+      res.status(400).json({ error: 'Could not add games' });
+    }
+
+    res.json(data);
+  });
+});
+
 module.exports.handler = serverless(app);
