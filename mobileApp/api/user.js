@@ -15,3 +15,19 @@ export const getUser = async userId =>
       error: err,
       message: 'Unable to get user info',
     }));
+
+export const addGames = async (userId, games) =>
+  axios
+    .post(`${apiPath}/addGames/`, {
+      userId,
+      games,
+    })
+    .then(res => ({
+      success: true,
+      user: res.data,
+    }))
+    .catch(err => ({
+      success: false,
+      error: err,
+      message: 'Unable to add games',
+    }));
