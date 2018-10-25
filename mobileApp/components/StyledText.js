@@ -10,6 +10,7 @@ export const RegularText = props => (
       {
         color: primaryFontColor,
         fontFamily: 'Roboto-Regular',
+        fontSize: 12,
       },
       props.style,
     ])}
@@ -34,4 +35,12 @@ export const MutedSmallText = props => (
     {...props}
     style={[props.style, { fontSize: 10, opacity: 0.7, fontFamily: 'Roboto-Bold' }]}
   />
+);
+
+export const SuccessText = props => (
+  <Text {...props} style={[props.style, { color: 'green', fontFamily: 'Roboto-Bold' }]} />
+);
+
+export const FailureText = props => (
+  <Text {...props} style={[props.style, { color: 'red', fontFamily: 'Roboto-Bold' }]} />
 );
