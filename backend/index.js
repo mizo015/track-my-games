@@ -37,10 +37,33 @@ app.get('/users/:userId', (req, res) => {
     if (error) {
       res.status(400).json({ error: 'Could not get user' });
     }
-    if (result.Item) {
+    if (result && result.Item) {
       res.json(result.Item);
     } else {
       res.status(404).json({ error: 'User not found' });
+    }
+  });
+});
+
+// Get Users by email endpoint
+app.get('/usersByEmail/:email', (req, res) => {
+  const params = {
+    TableName: USERS_TABLE,
+    FilterExpression: 'email = :email',
+    ExpressionAttributeValues: {
+      ':email': req.params.email,
+    },
+    ProjectionExpression: 'userId',
+  };
+
+  dynamoDb.scan(params, (error, result) => {
+    if (error) {
+      res.status(400).json({ error: `Could not get user by email = ${req.params.email}` });
+    }
+    if (result && result.Items) {
+      res.json(result.Items);
+    } else {
+      res.status(404).json({ error: `User not found by email - ${req.params.email}` });
     }
   });
 });
