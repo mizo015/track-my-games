@@ -8,6 +8,7 @@ import SuccessFailureMessage from '../components/SuccessFailureMessage';
 import LabeledInput from '../components/LabeledInput';
 import { createGame } from '../factory/Game';
 import { addGames } from '../api/user';
+import { getItem } from '../storage/localStorage';
 
 export default class NewGameScreen extends React.Component {
   static navigationOptions = {
@@ -115,7 +116,8 @@ export default class NewGameScreen extends React.Component {
   onSubmitPress = async () => {
     const { game } = this.state;
 
-    const res = await addGames('1', [game]);
+    const user = await getItem('user');
+    const res = await addGames(user.userId, [game]);
 
     this.setState({
       addGameStatus: res.success,
