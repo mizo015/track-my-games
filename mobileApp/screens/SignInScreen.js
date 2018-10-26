@@ -2,9 +2,9 @@ import React from 'react';
 import { Button, View, StyleSheet } from 'react-native';
 
 import { FailedLogin } from '../components/FailedLogin';
+import DevTriggers from '../components/DevTriggers';
 
 import { signInWithGoogleAsync } from '../helpers/Auth';
-import { setItem } from '../storage/localStorage';
 
 const styles = StyleSheet.create({
   container: {
@@ -38,8 +38,7 @@ export default class SignInScreen extends React.Component {
   _signInAsync = async () => {
     const { navigation } = this.props;
     const result = await signInWithGoogleAsync();
-
-    if (result.accessToken) {
+    if (result && result.userId) {
       navigation.navigate('Main');
       return;
     }

@@ -7,7 +7,7 @@ import GamesList from '../components/GamesList';
 import Header from '../components/Header';
 import Error from '../components/Error';
 
-import { getUser } from '../api/user';
+import { getItem } from '../storage/localStorage';
 
 export default class GamesScreen extends React.Component {
   static navigationOptions = {
@@ -21,16 +21,16 @@ export default class GamesScreen extends React.Component {
   };
 
   async componentDidMount() {
-    const usrRes = await getUser('1');
+    const user = await getItem('user');
 
-    if (usrRes.success) {
+    if (user) {
       this.setState({
-        user: usrRes.user,
+        user: JSON.parse(user),
         loading: false,
       });
     } else {
       this.setState({
-        userError: usrRes.message,
+        userError: 'Failed to get user info',
         loading: false,
       });
     }
@@ -45,8 +45,9 @@ export default class GamesScreen extends React.Component {
         {userError && <Error message={userError} />}
         {loading && <Text>...Loading</Text>}
         {!loading &&
-          user && (
-            <GamesList data={user.games.map(u => ({ ...u, key: u.id }))} navigation={navigation} />
+          user &&
+          user.games && (
+            <GamesList data={user.games.map(g => ({ ...g, key: g.id }))} navigation={navigation} />
           )}
       </View>
     );
