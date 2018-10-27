@@ -5,6 +5,7 @@ import {
   defaultBorderWidth,
   defaultBackgroundColor,
   secondaryBackgroundColor,
+  primaryColor,
 } from './Constants';
 
 export const styles = StyleSheet.create({
@@ -28,6 +29,8 @@ export const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
+    borderColor: primaryColor,
+    borderWidth: 4,
   },
   headerCenter: {
     flex: 2,

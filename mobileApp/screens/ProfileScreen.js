@@ -38,10 +38,10 @@ export default class ProfileScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerImageContainer}>
-            <Image source={{ uri: user.photoUrl }} style={styles.headerImage} />
+            <Image source={{ uri: user.profilePicUrl }} style={styles.headerImage} />
           </View>
           <View style={styles.headerCenter}>
-            <BoldText>{user.name}</BoldText>
+            <BoldText>{`${user.firstName} ${user.familyName}`}</BoldText>
             <RegularText>{user.email}</RegularText>
           </View>
           <View style={styles.headerRight}>
@@ -49,8 +49,9 @@ export default class ProfileScreen extends React.Component {
               <Icon.Ionicons
                 name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-logout'}
                 size={26}
-                style={{ marginBottom: -3, fontFamily: 'Roboto-Bold' }}
+                style={{ marginBottom: -3, marginLeft: 5, fontFamily: 'Roboto-Bold' }}
               />
+              <RegularText>logout</RegularText>
             </TouchableOpacity>
           </View>
         </View>
