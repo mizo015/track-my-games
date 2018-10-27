@@ -25,7 +25,7 @@ export default class GamesScreen extends React.Component {
 
     if (user) {
       this.setState({
-        user: JSON.parse(user),
+        user,
         loading: false,
       });
     } else {

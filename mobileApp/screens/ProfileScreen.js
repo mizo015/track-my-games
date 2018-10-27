@@ -63,7 +63,7 @@ export default class ProfileScreen extends React.Component {
     const user = await getItem('user');
 
     this.setState({
-      user: JSON.parse(user),
+      user,
       loading: false,
     });
   };
