@@ -3,12 +3,12 @@ import moment from 'moment';
 
 export const createGame = () => ({
   assists: null,
-  dateTime: moment.unix().format('x'),
+  dateTime: moment().unix(),
   defendedBalls: null,
   fun: null,
   gameTimeMins: null,
   goalsScored: null,
-  id: uniqueId(new Date().getTime()),
+  id: uniqueId(moment().unix()),
   lostBall: null,
   notes: null,
   offTargetShots: null,
