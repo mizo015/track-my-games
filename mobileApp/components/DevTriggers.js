@@ -36,7 +36,7 @@ export default class DevTriggers extends React.Component {
     console.log('User Object', user);
 
     this.setState({
-      userObj: JSON.parse(user),
+      userObj: user,
     });
   };
 }
