@@ -12,5 +12,5 @@ export const createUser = () => ({
   LastName: null,
   modifiedAt: moment().unix(),
   profilePicUrl: null,
-  userId: uniqueId(new Date().getTime()),
+  userId: uniqueId(moment().unix()),
 });
