@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { Container, Header as NBHeader, Left, Body, Right, Button, Title } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import { styles } from '../styles/Games';
 
@@ -11,7 +13,7 @@ import { getItem } from '../storage/localStorage';
 
 export default class GamesScreen extends React.Component {
   static navigationOptions = {
-    header: <Header title="Games" />,
+    header: null,
   };
 
   state = {
@@ -41,15 +43,30 @@ export default class GamesScreen extends React.Component {
     const { user, userError, loading } = this.state;
 
     return (
-      <View style={styles.container}>
-        {userError && <Error message={userError} />}
-        {loading && <Text>...Loading</Text>}
-        {!loading &&
-          user &&
-          user.games && (
-            <GamesList data={user.games.map(g => ({ ...g, key: g.id }))} navigation={navigation} />
-          )}
-      </View>
+      <Container>
+        <Header title="Games" refresh={this._refreshUserObj} />
+        <Grid>
+          <Row>
+            {userError && <Error message={userError} />}
+            {loading && <Text>...Loading</Text>}
+            {!loading &&
+              user &&
+              user.games && (
+                <GamesList
+                  data={user.games.map(g => ({ ...g, key: g.id }))}
+                  navigation={navigation}
+                  refresh={this._refreshUserObj}
+                />
+              )}
+          </Row>
+        </Grid>
+      </Container>
     );
   }
+
+  _refreshUserObj = user => {
+    this.setState({
+      user,
+    });
+  };
 }
