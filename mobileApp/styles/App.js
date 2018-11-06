@@ -6,10 +6,12 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    height: '10%',
+    // flex: 1,
+    marginBottom: 5,
   },
   header: {
     backgroundColor: tabHeaderColor,
+    // height: '10%',
   },
 });
 

@@ -71,6 +71,7 @@ GamesList.propTypes = {
       key: PropTypes.string,
     })
   ).isRequired,
+  refresh: PropTypes.func.isRequired,
 };
 
 export default GamesList;

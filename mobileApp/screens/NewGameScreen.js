@@ -8,11 +8,11 @@ import SuccessFailureMessage from '../components/SuccessFailureMessage';
 import LabeledInput from '../components/LabeledInput';
 import { createGame } from '../factory/Game';
 import { addGames } from '../api/user';
-import { getItem } from '../storage/localStorage';
+import { getItem, setItem } from '../storage/localStorage';
 
 export default class NewGameScreen extends React.Component {
   static navigationOptions = {
-    header: <Header title="Add New Game" />,
+    title: 'Add New Game',
   };
 
   state = {
@@ -22,9 +22,11 @@ export default class NewGameScreen extends React.Component {
 
   render() {
     const { game, addGameStatus } = this.state;
+    const { navigation } = this.props;
 
     return (
       <View style={{ flex: 1, flexDirection: 'column', padding: 10 }}>
+        <Text>{ typeof navigation.state.params.refresh}</Text>
         <View style={{ flexDirection: 'row' }}>
           <LabeledInput
             label="Location:"
@@ -115,12 +117,22 @@ export default class NewGameScreen extends React.Component {
 
   onSubmitPress = async () => {
     const { game } = this.state;
+    const { navigation } = this.props;
 
     const user = await getItem('user');
     const res = await addGames(user.userId, [game]);
+    const updatedUser = { ...user, games: [...user.games, game] };
 
-    this.setState({
-      addGameStatus: res.success,
-    });
+    await setItem('user', updatedUser);
+
+    navigation.state.params.refresh(updatedUser);
+
+    if (res.success) {
+      navigation.navigate('Home');
+    } else {
+      this.setState({
+        addGameStatus: res.success,
+      });
+    }
   };
 }
