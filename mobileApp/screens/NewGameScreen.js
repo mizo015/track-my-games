@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-import Header from '../components/Header';
 import Picker from '../components/Picker';
 import SuccessFailureMessage from '../components/SuccessFailureMessage';
 
@@ -26,7 +25,6 @@ export default class NewGameScreen extends React.Component {
 
     return (
       <View style={{ flex: 1, flexDirection: 'column', padding: 10 }}>
-        <Text>{ typeof navigation.state.params.refresh}</Text>
         <View style={{ flexDirection: 'row' }}>
           <LabeledInput
             label="Location:"
@@ -110,7 +108,6 @@ export default class NewGameScreen extends React.Component {
           accessibilityLabel="Add Game to list"
         />
         <SuccessFailureMessage status={addGameStatus} />
-        <Text>{JSON.stringify(game)}</Text>
       </View>
     );
   }
