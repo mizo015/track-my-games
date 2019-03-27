@@ -17,7 +17,7 @@ const GamesStack = createStackNavigator({
 });
 
 GamesStack.navigationOptions = {
-  tabBarLabel: 'Games',
+  title: 'Games',
   tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="list" />,
 };
 
@@ -26,7 +26,7 @@ const StatsStack = createStackNavigator({
 });
 
 StatsStack.navigationOptions = {
-  tabBarLabel: 'Stats',
+  title: 'Stats',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon type="FontAwesome" focused={focused} name="line-chart" />
   ),
@@ -37,7 +37,7 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Profile',
+  title: 'Profile',
   tabBarIcon: ({ focused }) => <TabBarIcon type="MCI" focused={focused} name="account" />,
 };
 

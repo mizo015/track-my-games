@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Picker as NativePicker } from 'react-native';
+import { View, Text, Picker as NativePicker } from 'react-native';
 
-import { BoldText } from './StyledText';
 import { styles } from '../styles/Inputs';
 
 const Picker = ({ selectedValue, options, label, _changeHandler, containerStyles }) => (
   <View style={containerStyles}>
-    <BoldText style={styles.pickerText}>{label}</BoldText>
+    <Text style={styles.pickerText}>{label}</Text>
     <NativePicker
       selectedValue={selectedValue}
       style={styles.picker}
@@ -23,6 +22,9 @@ const Picker = ({ selectedValue, options, label, _changeHandler, containerStyles
 
 Picker.propTypes = {
   _changeHandler: PropTypes.func.isRequired,
+  containerStyles: PropTypes.objectOf({
+    flex: PropTypes.string.isRequired,
+  }).isRequired,
   selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number])
     .isRequired,
   options: PropTypes.arrayOf(

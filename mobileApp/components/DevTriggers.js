@@ -13,12 +13,20 @@ export default class DevTriggers extends React.Component {
     const { storageCleared, userObj } = this.state;
 
     return (
-      <View>
-        <Button type="button" title="Clear Local Storage" color="#841584" onPress={this._resetLocalStorage} />
+      <View >
+        <Button
+          type="button"
+          title="Clear Local Storage"
+          color="#841584"
+          onPress={this._resetLocalStorage}
+          style={{ marginBottom: '10px' }}
+        />
         <Button type="button" title="Print Storage" color="#841584" onPress={this._printUserObj} />
 
         {storageCleared && <Text>Cleared!</Text>}
-        <Text style={{ backgroundColor: 'rgb(247, 247, 248)', color: 'rgba(0, 0, 32, 1)' }}>{userObj && JSON.stringify(userObj)}</Text>
+        <Text style={{ backgroundColor: 'rgb(247, 247, 248)', color: 'rgba(0, 0, 32, 1)' }}>
+          {userObj && JSON.stringify(userObj)}
+        </Text>
       </View>
     );
   }

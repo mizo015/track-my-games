@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button, View, StyleSheet } from 'react-native';
+import { Button, View, StyleSheet, Text } from 'react-native';
 
 import { FailedLogin } from '../components/FailedLogin';
-import DevTriggers from '../components/DevTriggers';
-
 import { signInWithGoogleAsync } from '../helpers/Auth';
 
 const styles = StyleSheet.create({
@@ -29,7 +27,9 @@ export default class SignInScreen extends React.Component {
     return (
       <View style={styles.container}>
         <FailedLogin failed={loginFailed} />
-        <View>THIS IS SIGN IN SCREEN</View>
+        <View>
+          <Text>THIS IS SIGN IN SCREEN</Text>
+        </View>
         <Button title="Sign in!" onPress={this._signInAsync} />
       </View>
     );

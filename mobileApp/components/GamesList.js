@@ -31,7 +31,7 @@ const GameItem = ({ item, _handlePress }) => {
           <View style={gameItem.stats}>
             <RegularText>{`Goals: ${item.goalsScored}`}</RegularText>
             <RegularText>{`Assists: ${item.assists}`}</RegularText>
-            <RegularText>{`Lost: ${item.lostBall}`}</RegularText>
+            <RegularText>{`Lost: ${item.lostBalls}`}</RegularText>
             <RegularText>{`On Target: ${item.onTargetShots}`}</RegularText>
             <RegularText>{`Off Target: ${item.offTargetShots}`}</RegularText>
           </View>
@@ -71,7 +71,6 @@ GamesList.propTypes = {
       key: PropTypes.string,
     })
   ).isRequired,
-  refresh: PropTypes.func.isRequired,
 };
 
 export default GamesList;

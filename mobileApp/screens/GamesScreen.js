@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Container, Header as NBHeader, Left, Body, Right, Button, Title } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-
-import { styles } from '../styles/Games';
+import { Text } from 'react-native';
+import { Container } from 'native-base';
+import { Row, Grid } from 'react-native-easy-grid';
 
 import GamesList from '../components/GamesList';
 import Header from '../components/Header';
@@ -55,7 +53,6 @@ export default class GamesScreen extends React.Component {
                 <GamesList
                   data={user.games.map(g => ({ ...g, key: g.id }))}
                   navigation={navigation}
-                  refresh={this._refreshUserObj}
                 />
               )}
           </Row>
@@ -64,9 +61,9 @@ export default class GamesScreen extends React.Component {
     );
   }
 
-  _refreshUserObj = user => {
+  async _refreshUserObj(user) {
     this.setState({
       user,
     });
-  };
+  }
 }

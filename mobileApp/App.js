@@ -46,6 +46,7 @@ export default class App extends React.Component {
         'Roboto-LightItalic': require('./assets/fonts/Roboto-LightItalic.ttf'),
         'Roboto-Thin': require('./assets/fonts/Roboto-Thin.ttf'),
         'Roboto-ThinItalic': require('./assets/fonts/Roboto-ThinItalic.ttf'),
+        'Roboto_medium': require('./assets/fonts/Roboto-Medium.ttf'),
       }),
     ]);
 

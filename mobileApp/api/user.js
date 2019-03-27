@@ -1,7 +1,7 @@
 /* global __DEV__ */
 import axios from 'axios';
 
-const apiPath = __DEV__ ? 'http://localhost:3000' : '_FILL_IN_PROD_API_PATH';
+const apiPath = 'https://bzf0ukgfu7.execute-api.us-east-1.amazonaws.com/dev/';
 
 export const getUserById = async userId =>
   axios

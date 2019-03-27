@@ -47,7 +47,7 @@ export default class ProfileScreen extends React.Component {
           <View style={styles.headerRight}>
             <TouchableOpacity onPress={this._handleSignOut}>
               <Icon.Ionicons
-                name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-logout'}
+                name="ios-log-out"
                 size={26}
                 style={{ marginBottom: -3, marginLeft: 5, fontFamily: 'Roboto-Bold' }}
               />
