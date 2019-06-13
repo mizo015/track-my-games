@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, View, StyleSheet, Text } from 'react-native';
 
 import { FailedLogin } from '../components/FailedLogin';
+import  CanvasA from '../components/CanvasA';
 import { signInWithGoogleAsync } from '../helpers/Auth';
 
 const styles = StyleSheet.create({
@@ -26,6 +27,7 @@ export default class SignInScreen extends React.Component {
 
     return (
       <View style={styles.container}>
+        <CanvasA />
         <FailedLogin failed={loginFailed} />
         <View>
           <Text>THIS IS SIGN IN SCREEN</Text>

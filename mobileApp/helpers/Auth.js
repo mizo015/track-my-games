@@ -1,5 +1,5 @@
 import Expo from 'expo';
-import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from '../credentials.json';
+// import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from '../credentials.json';
 import { setItem } from '../storage/localStorage';
 import { createUser } from '../factory/User';
 import { addUser, getUserByEmail, getUserById } from '../api/user';
