@@ -13,8 +13,8 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.3",
-    "serverless": "^1.40.0",
-    "serverless-dynamodb-local": "^0.2.35",
+    "serverless": "^1.45.1",
+    "serverless-dynamodb-local": "^1.0.2",
     "serverless-offline": "^3.27.0"
   },
   "scripts": {
