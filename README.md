@@ -1,6 +1,8 @@
-# Crowdbotics
-# Track-My-Games
-Mobile app to track games you play in leagues, pick ups,..etc. (In Progress)
+# Track-My-Games (in Progress)
+Mobile app to track games you play in leagues, pick ups,..etc. 
+
+## Note:
+This is a for fun app that I am building to explore mobile tech space espcially React Native. So the code is not production ready. If you are reading these lines, please don't copy paste :) 
 
 TODOS:
 - add archetecture diagram
