@@ -17,7 +17,7 @@
     "@terrylinla/react-native-sketch-canvas": "^0.8.0",
     "axios": "^0.18.0",
     "expo": "^32.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "moment": "^2.22.2",
     "native-base": "^2.12.1",
     "prop-types": "^15.6.2",
