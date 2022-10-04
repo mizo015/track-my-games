@@ -16,7 +16,7 @@
     "@expo/vector-icons": "^8.0.0",
     "@terrylinla/react-native-sketch-canvas": "^0.8.0",
     "axios": "^0.18.0",
-    "expo": "^32.0.0",
+    "expo": "^46.0.14",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "native-base": "^2.12.1",
